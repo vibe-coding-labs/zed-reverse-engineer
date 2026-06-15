@@ -1,0 +1,4 @@
+# Binary files - too large for git
+data/**/*.dmg
+data/**/*.exe
+data/**/*.tar.gz
