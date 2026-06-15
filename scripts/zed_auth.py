@@ -21,6 +21,7 @@ Zed Authentication Flow - Python Implementation
 """
 
 import base64
+import hashlib
 import json
 import logging
 import os
@@ -168,6 +169,11 @@ def decrypt_access_token(private_key, encrypted_b64: str) -> str:
         return plaintext.decode("utf-8")
     except Exception as e:
         raise ValueError(f"Failed to decrypt access token: {e}")
+
+
+def token_fingerprint(token: str) -> str:
+    """生成安全的 token 指纹用于日志，不可逆向还原出原始 token"""
+    return hashlib.sha256(token.encode()).hexdigest()[:12]
 
 
 def random_token() -> str:
@@ -525,7 +531,7 @@ def authenticate_via_browser() -> Credentials:
     logger.info("=" * 60)
 
     access_token = decrypt_access_token(private_key, encrypted_token)
-    logger.info(f"Access token (前20位): {access_token[:20]}...")
+    logger.info(f"Access token fingerprint: {token_fingerprint(access_token)}")
 
     credentials = Credentials(
         user_id=int(user_id_str),
@@ -593,7 +599,7 @@ def get_llm_token_flow(
             org_id,
             system_id=system_id,
         )
-        logger.info(f"  LLM Token: {llm_token_str[:20]}...")
+        logger.info(f"  LLM Token fingerprint: {token_fingerprint(llm_token_str)}")
     except requests.HTTPError as e:
         if e.response.status_code == 401:
             logger.error("401 Unauthorized - 凭证过期或无效")
