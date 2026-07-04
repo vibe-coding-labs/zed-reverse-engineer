@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/zed-reverse-engineer/',
   title: 'Zed Reverse Engineer',
   description: 'Zed Editor 逆向分析 — AI协议、登录授权、反向代理方案',
   lang: 'zh-CN',
