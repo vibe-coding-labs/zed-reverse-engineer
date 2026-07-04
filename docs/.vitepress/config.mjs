@@ -19,6 +19,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '通信协议', link: '/protocol/ai-protocol' },
       { text: '授权协议', link: '/protocol/auth-protocol' },
+      { text: '深度分析', link: '/protocol/deep-dive' },
       { text: '方案设计', link: '/design/reverse-proxy' },
       { text: '分析', link: '/analysis/free-tier' },
     ],
@@ -30,6 +31,7 @@ export default defineConfig({
           items: [
             { text: 'AI 通信协议分析', link: '/protocol/ai-protocol' },
             { text: '登录授权协议分析', link: '/protocol/auth-protocol' },
+            { text: '全链路深度分析', link: '/protocol/deep-dive' },
           ],
         },
       ],
