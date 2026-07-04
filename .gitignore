@@ -2,3 +2,6 @@
 data/**/*.dmg
 data/**/*.exe
 data/**/*.tar.gz
+
+# Node dependencies
+node_modules/
