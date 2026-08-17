@@ -357,7 +357,7 @@ class MockHandler(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/x-ndjson")
             self.send_header("x-zed-server-supports-status-messages", "true")
             self.send_header("x-zed-client-supports-stream-ended-request-completion-status", "true")
-            self.send_header("Connection", "keep-alive")
+            self.send_header("Connection", "close")
             self.end_headers()
 
             def write(line):
@@ -387,6 +387,9 @@ class MockHandler(BaseHTTPRequestHandler):
                 write({"Event": {"type": "text", "text": f"Mock response from {provider}/{model}"}})
 
             write({"Status": "StreamEnded"})
+
+            # 显式关闭连接，通知客户端流已结束（ndjson 无终止符，需 EOF 才能触发 iter_lines 结束）
+            self.close_connection = True
 
         elif path in (
             "/client/feedback/agent_thread",

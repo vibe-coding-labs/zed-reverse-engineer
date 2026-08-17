@@ -32,10 +32,10 @@ description: 当前分析工作的盲区盘点及优先级排序
 
 > **本项目已于 2026-08-17 公开发布**（`vibe-coding-labs/zed-reverse-engineer`）。
 >
-> 所有协议/架构分析均基于 **Zed 源码阅读**（243 个 crate 覆盖 100%），**尚未使用真实账号向 cloud.zed.dev 发起过实际请求验证**。下方 P0 项（端到端实测、OAuth 流程实测）保留为未来工作，属于**待验证而非已完成**的状态。
+> 所有协议/架构分析均基于 **Zed 源码阅读**（243 个 crate 覆盖 100%）。**协议实现已于 2026-08-17 通过本地 mock 全链路验证**（`scripts/zed_mock_server.py` + `scripts/zed_test.py`，4/4 测试通过：授权 → 用户 → 建 LLM token → 模型 → 流式补全），**但尚未使用真实账号向 cloud.zed.dev 发起过实际请求验证**。下方 P0 的真实账号端到端与 OAuth 实测保留为未来工作，属于**待验证而非已完成**的状态。
 >
-> 结论来源定位：<span style="color:var(--vp-c-warning)">**源码推导（理论）**</span>，
-> 验证程度：<span style="color:var(--vp-c-warning)">**未实测（0 次真实请求）**</span>。
+> 结论来源定位：<span style="color:var(--vp-c-warning)">**源码推导（理论）+ 本地 mock 接口验证**</span>，
+> 验证程度：<span style="color:var(--vp-c-warning)">**真实账号实测 0 次**（本地 mock 全链路 4/4 通过）</span>。
 
 ---
 
@@ -43,9 +43,9 @@ description: 当前分析工作的盲区盘点及优先级排序
 
 ### P0 — 待验证（非已完成）
 
-**端到端实测** — 从未用真实账号向 cloud.zed.dev 发过请求。协议分析完全基于读源码，缺少实际验证。
+**端到端实测（真实账号）** — 协议实现已通过本地 mock 全链路验证（4/4），但**从未用真实账号向 cloud.zed.dev 发过请求**，真实服务器行为未验证。
 
-**OAuth 流程实测** — 回调服务器 + RSA 解密从未真实跑通过。
+**OAuth 流程实测（真实账号）** — 回调服务器 + RSA 解密逻辑已实现且 mock 下覆盖，但**从未真实跑通过**（需真实 GitHub 登录）。
 
 ### P1 — 重要
 
