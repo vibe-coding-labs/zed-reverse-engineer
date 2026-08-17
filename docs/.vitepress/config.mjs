@@ -21,6 +21,7 @@ export default defineConfig({
       { text: '授权协议', link: '/protocol/auth-protocol' },
       { text: '深度分析', link: '/protocol/deep-dive' },
       { text: '方案设计', link: '/design/reverse-proxy' },
+      { text: '架构分析', link: '/architecture/overview' },
       { text: '分析', link: '/analysis/free-tier' },
     ],
 
@@ -32,6 +33,21 @@ export default defineConfig({
             { text: 'AI 通信协议分析', link: '/protocol/ai-protocol' },
             { text: '登录授权协议分析', link: '/protocol/auth-protocol' },
             { text: '全链路深度分析', link: '/protocol/deep-dive' },
+          ],
+        },
+      ],
+      '/architecture/': [
+        {
+          text: '架构分析',
+          items: [
+            { text: '整体架构分层', link: '/architecture/overview' },
+            { text: 'Agent 核心设计', link: '/architecture/agent-core' },
+            { text: 'Agent 工具系统', link: '/architecture/agent-tools' },
+            { text: 'ACP 与外部 Agent', link: '/architecture/agent-servers' },
+            { text: 'LLM 抽象层与 Provider', link: '/architecture/language-model-layer' },
+            { text: '会话持久化', link: '/architecture/agent-persistence' },
+            { text: 'ACP 协议客户端', link: '/architecture/acp-protocol-client' },
+            { text: 'Agent UI 与技能', link: '/architecture/agent-ui-skills' },
           ],
         },
       ],

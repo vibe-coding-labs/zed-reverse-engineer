@@ -16,13 +16,29 @@ hero:
       text: 登录授权协议 →
       link: /protocol/auth-protocol
     - theme: alt
+      text: 架构分析 →
+      link: /architecture/overview
+    - theme: alt
       text: 反向代理方案 →
       link: /design/reverse-proxy
-    - theme: alt
-      text: GitHub 仓库
-      link: https://github.com/vibe-coding-labs/zed-reverse-engineer
 
 features:
+  - icon: 🧩
+    title: 整体架构分层
+    details: 243 个 crate 全景归类，GPUI/Workspace/Agent/云服务六大层次与核心数据流
+    link: /architecture/overview
+  - icon: 🤖
+    title: Agent 核心设计
+    details: Thread 主循环、工具调度、权限确认、沙箱隔离、中止恢复的完整机制
+    link: /architecture/agent-core
+  - icon: 🛠️
+    title: Agent 工具系统
+    details: AgentTool 契约、32+ 内置工具分类、流式编辑会话、MCP 集成、撤销机制
+    link: /architecture/agent-tools
+  - icon: 🔌
+    title: ACP 与外部 Agent
+    details: AgentServer 统一抽象、JSON-RPC over stdio 桥接、Claude Code/Codex 接入、会话持久化
+    link: /architecture/agent-servers
   - icon: 🔬
     title: AI 通信协议
     details: 深入分析 Zed 与 cloud.zed.dev 的 AI 通信协议，包括 LLM Completion API、ACP 协议、流式响应格式

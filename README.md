@@ -18,6 +18,14 @@
 
 | 页面 | 说明 |
 |------|------|
+| [整体架构分层](https://vibe-coding-labs.github.io/zed-reverse-engineer/architecture/overview) | 243 个 crate 六大层次全景与核心数据流 |
+| [Agent 核心设计](https://vibe-coding-labs.github.io/zed-reverse-engineer/architecture/agent-core) | Thread 主循环、工具调度、权限确认、沙箱、中止恢复 |
+| [Agent 工具系统](https://vibe-coding-labs.github.io/zed-reverse-engineer/architecture/agent-tools) | AgentTool 契约、32+ 工具分类、流式编辑、MCP |
+| [ACP 与外部 Agent](https://vibe-coding-labs.github.io/zed-reverse-engineer/architecture/agent-servers) | AgentServer 抽象、JSON-RPC 桥接、Claude Code 接入 |
+| [LLM 抽象层与 Provider](https://vibe-coding-labs.github.io/zed-reverse-engineer/architecture/language-model-layer) | LanguageModel 三层抽象、20 个 Provider 适配矩阵 |
+| [会话持久化](https://vibe-coding-labs.github.io/zed-reverse-engineer/architecture/agent-persistence) | Thread 的 SQLite schema、zstd 序列化、保存/恢复时机 |
+| [ACP 协议客户端](https://vibe-coding-labs.github.io/zed-reverse-engineer/architecture/acp-protocol-client) | 双向 JSON-RPC 方法清单、SessionUpdate 通知、终端事件流 |
+| [Agent UI 与技能](https://vibe-coding-labs.github.io/zed-reverse-engineer/architecture/agent-ui-skills) | 面板状态机、消息渲染、Skills 目录/格式/优先级 |
 | [AI 通信协议](https://vibe-coding-labs.github.io/zed-reverse-engineer/protocol/ai-protocol) | LLM Completion API、ACP 协议、流式机制 |
 | [登录授权协议](https://vibe-coding-labs.github.io/zed-reverse-engineer/protocol/auth-protocol) | GitHub OAuth、LLM Token、WebSocket |
 | [反向代理方案](https://vibe-coding-labs.github.io/zed-reverse-engineer/design/reverse-proxy) | 3 种方案对比、实现细节 |

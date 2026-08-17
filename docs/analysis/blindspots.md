@@ -10,12 +10,21 @@ description: 当前分析工作的盲区盘点及优先级排序
 | 工作项 | 状态 | 产出 |
 |--------|------|------|
 | 官网调研 & 二进制下载 | ✅ | 5 个平台文件下载到 `data/` |
-| 源码结构分析 | ✅ | 234 个 crate 概览 |
+| 源码结构分析 | ✅ | 243 个 crate 概览 |
 | AI 通信协议分析 | ✅ | 完整协议文档 |
 | 登录授权协议分析 | ✅ | 完整流程文档 |
 | 反向代理方案设计 | ✅ | 方案文档 |
 | 免费额度分析 | ✅ | 分析文档 |
 | Python 授权脚本 | ✅ | 完整脚本 |
+| **整体架构分层分析** | ✅ | `docs/architecture/overview.md`（243 crate 六大层次/核心数据流） |
+| **Agent 核心设计分析** | ✅ | `docs/architecture/agent-core.md`（Thread 主循环/权限/沙箱） |
+| **Agent 工具系统分析** | ✅ | `docs/architecture/agent-tools.md`（32+ 工具/流式编辑/MCP） |
+| **ACP 与外部 Agent 分析** | ✅ | `docs/architecture/agent-servers.md`（统一抽象/JSON-RPC 桥接） |
+| **LLM 抽象层与 Provider** | ✅ | `docs/architecture/language-model-layer.md`（三层抽象/20 Provider） |
+| **会话持久化** | ✅ | `docs/architecture/agent-persistence.md`（SQLite schema/zstd 序列化） |
+| **ACP 协议客户端** | ✅ | `docs/architecture/acp-protocol-client.md`（双向 JSON-RPC/方法清单） |
+| **Agent UI 与技能** | ✅ | `docs/architecture/agent-ui-skills.md`（面板状态机/Skills 格式） |
+| **crate 源码覆盖** | ✅ | `notes/reports/` 89 份报告，243 个 crate 逐一定位（覆盖度 100%） |
 
 ---
 

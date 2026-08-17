@@ -3,5 +3,15 @@ data/**/*.dmg
 data/**/*.exe
 data/**/*.tar.gz
 
+# Extracted app bundle (388MB of binaries/libs) - keep only the archives
+data/linux/zed.app/
+
 # Node dependencies
 node_modules/
+
+# Build output
+docs/.vitepress/dist/
+
+# Python cache
+__pycache__/
+scripts/__pycache__/
